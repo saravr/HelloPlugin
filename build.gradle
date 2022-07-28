@@ -1,0 +1,28 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'idea'
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group = 'com.example'
+version = '1.1'
+
+gradlePlugin {
+    plugins {
+        helloPlugin {
+            id = 'com.example.helloplugin'
+            implementationClass = 'com.example.helloplugin.HelloPlugin'
+        }
+    }
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+}
