@@ -5,10 +5,11 @@ import org.gradle.api.Project
 
 class HelloPlugin implements Plugin<Project> {
     void apply(Project project) {
-        def extension = project.extensions.create('greeting', HelloPluginExtension)
+        ////def extension = project.extensions.create('greeting', HelloPluginExtension)
         project.task('hello') {
             doLast {
-                println extension.message.get() + ' from ' + extension.greeter.get() + ' in project: ' + project.name
+                println("Hello ..... from plugin")
+                ////println extension.message.get() + ' from ' + extension.greeter.get() + ' in project: ' + project.name
             }
         }
     }
